@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Calc</title>
+  </head>
+  <body>
+    <script src="build/index.js"></script>
+    <script>
+      var p = document.createElement('p')
+      var csscalc = require('./index.js')
+      p.textContent = csscalc() ? 'yes' : 'no'
+      document.body.appendChild(p)
+    </script>
+  </body>
+</html>

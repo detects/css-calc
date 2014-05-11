@@ -4,20 +4,12 @@
  * http://caniuse.com/calc
  */
 
-module prefixes from "https://nlz.io/github/detects/prefixes.js/*/index.js"
-
 var supported
 
-export default function () {
-  if (supported !== null) return supported
-  var prop = 'width:'
-  var value = 'calc(10px);'
+export default function csscalc() {
+  if (supported != null) return supported
   var el = document.createElement('div')
-  var text = ''
-  for (var i = 0; i < prefixes.length; i++) {
-    text += prop + prefixes[i] + value
-  }
-  el.style.cssText = text
+  el.style.cssText = 'width:-webkit-calc(10px);width:-moz-calc(10px);width:calc(10px);'
   supported = !!el.style.length
   document.documentElement.className += (supported ? '' : 'no-') + 'csscalc'
   return supported
