@@ -48,7 +48,11 @@ require.register("./index.js", function (exports, module) {
 
 var supported
 
-module.exports = function csscalc() {
+csscalc()
+
+module.exports = csscalc
+
+function csscalc() {
   if (supported != null) return supported
   var el = document.createElement('div')
   el.style.cssText = 'width:-webkit-calc(10px);width:-moz-calc(10px);width:calc(10px);'
